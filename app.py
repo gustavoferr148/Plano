@@ -10,19 +10,35 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 2. Injeção de CSS para esconder a "cara de Streamlit"
+# 2. Injeção de CSS para esconder a "cara de Streamlit" e corrigir contrastes
 ocultar_elementos = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
-            /* Ajuste para o banner azul colar no topo da tela */
+            
+            /* Ajuste para o banner azul colar no topo do ecrã */
             .block-container {
                 padding-top: 0rem;
                 padding-bottom: 0rem;
             }
-            /* Garante que o texto dos botões numéricos na barra lateral fiquem visíveis */
+            
+            /* Garante que o texto dos botões numéricos fiquem visíveis */
             [data-testid="stSidebar"] input {
+                color: #0C1C4C !important;
+            }
+            
+            /* --- CORREÇÃO DA CAIXA DE SELEÇÃO (SELECTBOX) --- */
+            /* Força o texto dentro da caixa principal a ficar branco para contrastar com o fundo azul */
+            div[data-baseweb="select"] > div {
+                color: #FFFFFF !important;
+            }
+            div[data-baseweb="select"] > div * {
+                color: #FFFFFF !important;
+            }
+            
+            /* Garante que a lista suspensa (dropdown) mantém o texto azul sobre o fundo claro */
+            ul[data-baseweb="menu"] * {
                 color: #0C1C4C !important;
             }
             </style>
