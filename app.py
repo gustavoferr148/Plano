@@ -17,19 +17,38 @@ ocultar_elementos = """
             footer {visibility: hidden;}
             header {visibility: hidden;}
             
-            /* Ajuste para o banner azul colar no topo do ecrã */
+            /* Ajuste para o banner azul colar no topo da tela */
             .block-container {
                 padding-top: 0rem;
                 padding-bottom: 0rem;
             }
             
-            /* --- CORREÇÃO DE TODOS OS CAMPOS NUMÉRICOS E DE TEXTO --- */
-            input {
+            /* --- CORREÇÕES DA BARRA LATERAL (SIDEBAR) --- */
+            /* 1. Força os títulos, textos e descrições da barra lateral a ficarem brancos */
+            [data-testid="stSidebar"] h1, 
+            [data-testid="stSidebar"] h2, 
+            [data-testid="stSidebar"] h3, 
+            [data-testid="stSidebar"] p, 
+            [data-testid="stSidebar"] label {
                 color: #FFFFFF !important;
-                -webkit-text-fill-color: #FFFFFF !important;
             }
             
-            /* --- CORREÇÃO DA CAIXA DE SELEÇÃO (SELECTBOX) --- */
+            /* 2. Como as caixas de preço são brancas, o texto digitado precisa ser azul escuro */
+            [data-testid="stSidebar"] input {
+                color: #0C1C4C !important;
+                -webkit-text-fill-color: #0C1C4C !important;
+            }
+            
+            /* 3. Os botões de + e - também precisam ser azuis para aparecerem no fundo branco */
+            [data-testid="stSidebar"] div[data-baseweb="input"] button {
+                color: #0C1C4C !important;
+            }
+            [data-testid="stSidebar"] div[data-baseweb="input"] button svg {
+                fill: #0C1C4C !important;
+            }
+            
+            /* --- CORREÇÕES DA TELA PRINCIPAL --- */
+            /* Mantém as caixas de seleção da tela principal com texto branco */
             div[data-baseweb="select"] > div {
                 color: #FFFFFF !important;
             }
@@ -37,18 +56,9 @@ ocultar_elementos = """
                 color: #FFFFFF !important;
             }
             
-            /* Garante que a lista suspensa (dropdown) mantém o texto azul sobre o fundo claro */
+            /* Garante que o menu que abre para baixo mantenha a letra azul */
             ul[data-baseweb="menu"] * {
                 color: #0C1C4C !important;
-            }
-            
-            /* --- CORREÇÃO DOS BOTÕES + E - NA BARRA LATERAL --- */
-            /* Força os ícones de + e - a ficarem brancos caso ainda existam campos de número */
-            div[data-baseweb="input"] button {
-                color: #FFFFFF !important;
-            }
-            div[data-baseweb="input"] button svg {
-                fill: #FFFFFF !important;
             }
             </style>
             """
