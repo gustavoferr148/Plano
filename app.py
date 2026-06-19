@@ -23,13 +23,14 @@ ocultar_elementos = """
                 padding-bottom: 0rem;
             }
             
-            /* Garante que o texto dos botões numéricos fiquem visíveis */
-            [data-testid="stSidebar"] input {
-                color: #0C1C4C !important;
+            /* --- CORREÇÃO DE TODOS OS CAMPOS NUMÉRICOS E DE TEXTO --- */
+            /* Força os números digitados a ficarem brancos sobre o fundo azul escuro */
+            input {
+                color: #FFFFFF !important;
+                -webkit-text-fill-color: #FFFFFF !important;
             }
             
             /* --- CORREÇÃO DA CAIXA DE SELEÇÃO (SELECTBOX) --- */
-            /* Força o texto dentro da caixa principal a ficar branco para contrastar com o fundo azul */
             div[data-baseweb="select"] > div {
                 color: #FFFFFF !important;
             }
@@ -44,7 +45,6 @@ ocultar_elementos = """
             </style>
             """
 st.markdown(ocultar_elementos, unsafe_allow_html=True)
-
 # 3. Cabeçalho Banner (Estilo Site da JR Consultoria)
 st.markdown(
     """
