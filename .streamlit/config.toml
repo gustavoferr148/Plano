@@ -1,14 +1,14 @@
 [theme]
-# Cor principal (botões, barra de progresso, sliders)
+# Cor principal (botões, barra de progresso)
 primaryColor = "#0C1C4C" 
 
-# Cor de fundo principal da tela (Branco)
+# Cor de fundo principal da tela (Área da direita - Branco)
 backgroundColor = "#FFFFFF" 
 
-# Cor de fundo secundária para o painel lateral (Cinza muito claro para dar contraste sutil)
-secondaryBackgroundColor = "#F8F9FA" 
+# Cor de fundo secundária (Barra Lateral - Azul escuro da JR)
+secondaryBackgroundColor = "#0C1C4C" 
 
-# Cor do texto principal
+# Cor do texto principal (Área da direita)
 textColor = "#0C1C4C" 
 
 # Fonte
