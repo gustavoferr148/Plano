@@ -91,7 +91,7 @@ else:  # Baixo
     fator_interesse = 1.15  # 15% de acréscimo
 
 # --- CÁLCULO FINAL ---
-preco_final = preco_base * fator_tempo * fator_consultores * **fator_complexidade** * **fator_interesse**
+preco_final = preco_base * fator_tempo * fator_consultores * fator_complexidade * fator_interesse
 
 # --- EXIBIÇÃO DOS RESULTADOS ---
 st.markdown("---")
