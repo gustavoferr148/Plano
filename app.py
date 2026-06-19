@@ -24,7 +24,6 @@ ocultar_elementos = """
             }
             
             /* --- CORREÇÃO DE TODOS OS CAMPOS NUMÉRICOS E DE TEXTO --- */
-            /* Força os números digitados a ficarem brancos sobre o fundo azul escuro */
             input {
                 color: #FFFFFF !important;
                 -webkit-text-fill-color: #FFFFFF !important;
@@ -42,9 +41,19 @@ ocultar_elementos = """
             ul[data-baseweb="menu"] * {
                 color: #0C1C4C !important;
             }
+            
+            /* --- CORREÇÃO DOS BOTÕES + E - NA BARRA LATERAL --- */
+            /* Força os ícones de + e - a ficarem brancos caso ainda existam campos de número */
+            div[data-baseweb="input"] button {
+                color: #FFFFFF !important;
+            }
+            div[data-baseweb="input"] button svg {
+                fill: #FFFFFF !important;
+            }
             </style>
             """
 st.markdown(ocultar_elementos, unsafe_allow_html=True)
+
 # 3. Cabeçalho Banner (Estilo Site da JR Consultoria)
 st.markdown(
     """
@@ -55,6 +64,7 @@ st.markdown(
     """, 
     unsafe_allow_html=True
 )
+
 # 4. Painel Lateral: Valores Base
 st.sidebar.title("⚙️ Parâmetros Base")
 st.sidebar.caption("Defina o piso de precificação das metodologias.")
@@ -76,8 +86,10 @@ with aba_calculo:
     with col_input1:
         st.subheader("Escopo do Projeto")
         metodologia = st.selectbox("Metodologia", ["Plano de Marketing", "Mapeamento de Processos", "Pesquisa de Mercado"])
-        tempo = st.number_input("Tempo de Execução (Semanas)", min_value=2, max_value=24, value=6)
-        consultores = st.number_input("Consultores Alocados", min_value=1, max_value=10, value=3)
+        
+        # Aqui transformamos os campos em menus suspensos (setinha para baixo)
+        tempo = st.selectbox("Tempo de Execução (Semanas)", options=list(range(2, 25)), index=4) # index 4 seleciona o número 6 como padrão
+        consultores = st.selectbox("Consultores Alocados", options=list(range(1, 11)), index=2) # index 2 seleciona o número 3 como padrão
 
     with col_input2:
         st.subheader("Variáveis Estratégicas")
