@@ -47,6 +47,12 @@ ocultar_elementos = """
                 fill: #0C1C4C !important;
             }
             
+            /* 4. Força a setinha de recolher a barra lateral (<<) a ficar branca */
+            [data-testid="stSidebarCollapseButton"] svg {
+                color: #FFFFFF !important;
+                fill: #FFFFFF !important;
+            }
+            
             /* --- CORREÇÕES DA TELA PRINCIPAL --- */
             /* Mantém as caixas de seleção da tela principal com texto branco */
             div[data-baseweb="select"] > div {
