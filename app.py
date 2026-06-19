@@ -13,14 +13,9 @@ st.set_page_config(
 # 2. Injeção de CSS para esconder a "cara de Streamlit"
 ocultar_elementos = """
             <style>
-            /* Esconde o menu superior direito (os três pontinhos) */
             #MainMenu {visibility: hidden;}
-            /* Esconde a marca d'água do rodapé */
             footer {visibility: hidden;}
-            /* Esconde a barra colorida no topo da página */
             header {visibility: hidden;}
-            
-            /* Ajuste de margens para o conteúdo subir mais na tela */
             .block-container {
                 padding-top: 2rem;
                 padding-bottom: 0rem;
@@ -29,14 +24,14 @@ ocultar_elementos = """
             """
 st.markdown(ocultar_elementos, unsafe_allow_html=True)
 
-# 3. Cabeçalho Limpo
+# 3. Cabeçalho Limpo com a cor oficial
 st.markdown(
     """
     <div style='text-align: center; padding-bottom: 20px;'>
-        <h1 style='color: #60A5FA; margin-bottom: 0;'>Sistema Integrado de Precificação</h1>
-        <p style='color: #94A3B8; font-size: 1.1rem;'>Geração de propostas comerciais e análise de viabilidade</p>
+        <h1 style='color: #0C1C4C; margin-bottom: 0;'>Sistema Integrado de Precificação</h1>
+        <p style='color: #555555; font-size: 1.1rem;'>Geração de propostas comerciais e análise de viabilidade</p>
     </div>
-    <hr style='border: 1px solid #334155; margin-bottom: 30px;'>
+    <hr style='border: 1px solid #E2E8F0; margin-bottom: 30px;'>
     """, 
     unsafe_allow_html=True
 )
@@ -93,14 +88,14 @@ with aba_calculo:
 
     preco_final = preco_base * fator_tempo * fator_consultores * fator_complexidade * fator_interesse
 
-    # Exibição do Preço Final
+    # Exibição do Preço Final usando a cor #0C1C4C
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown(
         f"""
-        <div style="background-color: #1E3A8A; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #3B82F6;">
-            <p style="color: #BFDBFE; font-size: 1.1rem; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Valor Final para o Cliente</p>
+        <div style="background-color: #0C1C4C; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="color: #FFFFFF; font-size: 1.1rem; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Valor Final para o Cliente</p>
             <h1 style="color: #FFFFFF; font-size: 3.5rem; margin: 10px 0;">R$ {preco_final:,.2f}</h1>
-            <p style="color: #93C5FD; font-size: 0.9rem; margin: 0;">Proposta baseada em {tempo} semanas com {consultores} consultores.</p>
+            <p style="color: #E2E8F0; font-size: 0.9rem; margin: 0;">Proposta baseada em {tempo} semanas com {consultores} consultores.</p>
         </div>
         """.replace(",", "X").replace(".", ",").replace("X", "."),
         unsafe_allow_html=True
@@ -140,9 +135,9 @@ with aba_comparacao:
         with col:
             st.markdown(
                 f"""
-                <div style="background-color: #1E293B; border-left: 4px solid #60A5FA; padding: 20px; border-radius: 5px;">
-                    <p style="color: #94A3B8; margin: 0; font-size: 0.9rem;">Cenário: {met}</p>
-                    <h2 style="color: #E2E8F0; margin: 5px 0 0 0;">R$ {preco_alt:,.2f}</h2>
+                <div style="background-color: #FFFFFF; border-left: 5px solid #0C1C4C; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-top: 1px solid #E2E8F0; border-right: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
+                    <p style="color: #64748B; margin: 0; font-size: 0.9rem; font-weight: bold;">Cenário: {met}</p>
+                    <h2 style="color: #0C1C4C; margin: 5px 0 0 0;">R$ {preco_alt:,.2f}</h2>
                 </div>
                 """.replace(",", "X").replace(".", ",").replace("X", "."),
                 unsafe_allow_html=True
