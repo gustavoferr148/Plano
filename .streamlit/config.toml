@@ -1,0 +1,15 @@
+[theme]
+# Cor principal (botões, destaques)
+primaryColor = "#1E3A8A" 
+
+# Cor de fundo principal da tela
+backgroundColor = "#0F172A" 
+
+# Cor de fundo secundária (painel lateral, áreas destacadas)
+secondaryBackgroundColor = "#1E293B" 
+
+# Cor do texto principal
+textColor = "#F8FAFC" 
+
+# Fonte do sistema para visual mais limpo
+font = "sans serif"
