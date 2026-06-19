@@ -12,9 +12,9 @@ st.set_page_config(
 # 2. Rodapé Profissional
 footer_text = f"© {datetime.date.today().year} JR Consultoria | Curitiba, Paraná, Brasil | UFPR"
 st.markdown(
-    """
+    f"""
     <style>
-    .footer {
+    .footer {{
         position: fixed;
         left: 0;
         bottom: 0;
@@ -24,12 +24,12 @@ st.markdown(
         text-align: center;
         padding: 10px;
         font-size: 0.8rem;
-    }
+    }}
     </style>
     <div class="footer">
-        <p>{}</p>
+        <p>{footer_text}</p>
     </div>
-    """.format(footer_text),
+    """,
     unsafe_allow_html=True,
 )
 
