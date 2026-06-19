@@ -1,15 +1,15 @@
 [theme]
-# Cor principal (botões, destaques)
-primaryColor = "#1E3A8A" 
+# Cor principal (botões, barra de progresso, sliders)
+primaryColor = "#0C1C4C" 
 
-# Cor de fundo principal da tela
-backgroundColor = "#0F172A" 
+# Cor de fundo principal da tela (Branco)
+backgroundColor = "#FFFFFF" 
 
-# Cor de fundo secundária (painel lateral, áreas destacadas)
-secondaryBackgroundColor = "#1E293B" 
+# Cor de fundo secundária para o painel lateral (Cinza muito claro para dar contraste sutil)
+secondaryBackgroundColor = "#F8F9FA" 
 
 # Cor do texto principal
-textColor = "#F8FAFC" 
+textColor = "#0C1C4C" 
 
-# Fonte do sistema para visual mais limpo
+# Fonte
 font = "sans serif"
