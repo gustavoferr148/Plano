@@ -16,26 +16,29 @@ ocultar_elementos = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
+            /* Ajuste para o banner azul colar no topo da tela */
             .block-container {
-                padding-top: 2rem;
+                padding-top: 0rem;
                 padding-bottom: 0rem;
+            }
+            /* Garante que o texto dos botões numéricos na barra lateral fiquem visíveis */
+            [data-testid="stSidebar"] input {
+                color: #0C1C4C !important;
             }
             </style>
             """
 st.markdown(ocultar_elementos, unsafe_allow_html=True)
 
-# 3. Cabeçalho Limpo com a cor oficial
+# 3. Cabeçalho Banner (Estilo Site da JR Consultoria)
 st.markdown(
     """
-    <div style='text-align: center; padding-bottom: 20px;'>
-        <h1 style='color: #0C1C4C; margin-bottom: 0;'>Sistema Integrado de Precificação</h1>
-        <p style='color: #555555; font-size: 1.1rem;'>Geração de propostas comerciais e análise de viabilidade</p>
+    <div style='background-color: #0C1C4C; padding: 40px 20px; text-align: center; border-radius: 0px 0px 15px 15px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+        <h1 style='color: #FFFFFF; margin-bottom: 0; font-weight: bold;'>Sistema Integrado de Precificação</h1>
+        <p style='color: #E2E8F0; font-size: 1.1rem; margin-top: 5px;'>Geração de propostas comerciais e análise de viabilidade</p>
     </div>
-    <hr style='border: 1px solid #E2E8F0; margin-bottom: 30px;'>
     """, 
     unsafe_allow_html=True
 )
-
 # 4. Painel Lateral: Valores Base
 st.sidebar.title("⚙️ Parâmetros Base")
 st.sidebar.caption("Defina o piso de precificação das metodologias.")
